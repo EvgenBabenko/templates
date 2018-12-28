@@ -1,0 +1,30 @@
+import { TypeKeys } from './constants';
+
+const initialState = {
+  error: '',
+  isFetching: false,
+  users: [],
+}
+
+export default (state = initialState, action) => {
+  switch (action.type) {
+    case TypeKeys.GET_USERS_REQUEST:
+      return {
+        ...state,
+        isFetching: true
+      };
+    case TypeKeys.GET_USERS_SUCCESS:
+      return {
+        ...state,
+        isFetching: false,
+        users: action.users
+      };
+    case TypeKeys.GET_USERS_FAILURE:
+      return {
+        ...state,
+        error: action.error,
+      };
+    default:
+      return state;
+  }
+};
