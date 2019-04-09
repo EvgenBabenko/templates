@@ -15,16 +15,12 @@ const enchancer = process.env.NODE_ENV === 'production'
   ? applyMiddleware(...middlewares)
   : composeWithDevTools(applyMiddleware(...middlewares));
 
-const configureStore = () => {
-  const store = createStore(
-    rootReducer,
-    undefined,
-    enchancer,
-  )
+const store = createStore(
+  rootReducer,
+  undefined,
+  enchancer,
+)
 
-  sagaMiddleware.run(rootSaga);
+sagaMiddleware.run(rootSaga);
 
-  return store;
-};
-
-export default configureStore();
+export default store;

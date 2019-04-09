@@ -11,7 +11,7 @@ const App = (props) => {
   } = props;
 
   function handleClick() {
-    getUsersRequest();
+    getUsersRequest("dgfsdgfsd");
   }
 
   return (

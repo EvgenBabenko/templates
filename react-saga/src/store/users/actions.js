@@ -1,7 +1,8 @@
 import { TypeKeys } from './constants';
 
-export const getUsersRequest = () => ({
+export const getUsersRequest = (value) => ({
   type: TypeKeys.GET_USERS_REQUEST,
+  value
 });
 
 export const getUsersSuccess = (users) => ({

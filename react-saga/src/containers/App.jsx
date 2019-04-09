@@ -10,12 +10,12 @@ class AppContainer extends Component {
       users,
       getUsersRequest,
     } = this.props;
-    
+
     return (
       <App
         users={users}
         getUsersRequest={getUsersRequest}
-       />
+      />
     );
   }
 }
@@ -25,7 +25,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  getUsersRequest: () => dispatch(actions.getUsersRequest()),
+  getUsersRequest: (rr) => dispatch(actions.getUsersRequest(rr)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppContainer);
